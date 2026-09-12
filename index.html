@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>R&R Automations Teknik Mandiri</title>
+
+  <meta name="description" content="R&R Automations Teknik Mandiri - Solusi PLC, Automation, Electrical, Panel Control dan Custom Engineering.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .logo img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111827;
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #1769e0;
+    }
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(120deg, #07101f, #0d2345);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 1150px;
+      width: 92%;
+      margin: auto;
+      padding: 80px 0;
+    }
+
+    .tag {
+      color: #55a0ff;
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 75px);
+      line-height: 1.05;
+      max-width: 800px;
+      margin: 20px 0;
+    }
+
+    h1 span {
+      color: #3f91ff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: #1769e0;
+      color: white;
+    }
+
+    .secondary {
+      border: 1px solid #64748b;
+      color: white;
+    }
+
+    section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .label {
+      color: #1769e0;
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 12px 0 20px;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .about p {
+      color: #64748b;
+      margin-bottom: 15px;
+    }
+
+    .services {
+      background: #0b111b;
+      color: white;
+    }
+
+    .services-intro {
+      color: #94a3b8;
+      max-width: 650px;
+    }
+
+    .service-grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      background: #121c2a;
+      border: 1px solid #263548;
+      padding: 28px;
+      border-radius: 12px;
+    }
+
+    .service .number {
+      color: #55a0ff;
+      font-weight: bold;
+    }
+
+    .service h3 {
+      margin: 20px 0 10px;
+      font-size: 21px;
+    }
+
+    .service p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .service ul {
+      margin-top: 20px;
+      padding-left: 17px;
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
+    .projects {
+      background: #f5f7fa;
+    }
+
+    .project-grid {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+
+    .project-photo {
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e6edf7;
+      color: #64748b;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .project-info {
+      padding: 22px;
+    }
+
+    .project-info small {
+      color: #1769e0;
+      font-weight: bold;
+    }
+
+    .project-info h3 {
+      margin: 8px 0;
+    }
+
+    .project-info p {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .gallery {
+      background: white;
+    }
+
+    .gallery-grid {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-box {
+      height: 200px;
+      background: #e8eef7;
+      border: 1px solid #d8e0eb;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .process {
+      background: #f5f7fa;
+    }
+
+    .process-grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-item {
+      border-top: 3px solid #1769e0;
+      padding-top: 18px;
+    }
+
+    .process-item b {
+      color: #1769e0;
+    }
+
+    .process-item h3 {
+      margin: 15px 0 8px;
+    }
+
+    .process-item p {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .contact {
+      background: #1769e0;
+      color: white;
+    }
+
+    .contact p {
+      color: #dbeafe;
+      max-width: 650px;
+    }
+
+    .contact .button {
+      margin-top: 25px;
+      background: white;
+      color: #111827;
+    }
+
+    footer {
+      background: #070b11;
+      color: #94a3b8;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media(max-width: 800px) {
+
+      nav {
+        display: none;
+      }
+
+      .about-grid,
+      .service-grid,
+      .project-grid,
+      .gallery-grid,
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+    }
+
+    @media(max-width: 550px) {
+
+      .about-grid,
+      .service-grid,
+      .project-grid,
+      .gallery-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 20px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .project-photo,
+      .gallery-box {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <div class="logo">
+
+      <!-- Logo workshop -->
+      <img src="assets/logo.png" alt="Logo R&R Automations">
+
+      <div>
+        R&R<br>
+        AUTOMATIONS
+      </div>
+
+    </div>
+
+    <nav>
+      <a href="#home">Beranda</a>
+      <a href="#about">Tentang</a>
+      <a href="#services">Layanan</a>
+      <a href="#projects">Project</a>
+      <a href="#gallery">Galeri</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section id="home" class="hero">
+
+  <div class="hero-content">
+
+    <div class="tag">
+      AUTOMATION • PLC • ELECTRICAL • ENGINEERING
+    </div>
+
+    <h1>
+      Solusi <span>Otomasi</span><br>
+      Untuk Kebutuhan Industri.
+    </h1>
+
+    <p>
+      R&R Automations Teknik Mandiri merupakan workshop
+      yang bergerak di bidang PLC, automation, electrical,
+      panel control, wiring, modifikasi mesin dan custom engineering.
+    </p>
+
+    <div class="buttons">
+
+      <a href="#projects" class="button primary">
+        Lihat Project
+      </a>
+
+      <a href="#contact" class="button secondary">
+        Hubungi Kami
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="about" class="about">
+
+  <div class="container about-grid">
+
+    <div>
+
+      <div class="label">
+        TENTANG KAMI
+      </div>
+
+      <h2>
+        Workshop teknik untuk menciptakan solusi nyata.
+      </h2>
+
+    </div>
+
+    <div>
+
+      <p>
+        <b>R&R Automations Teknik Mandiri</b> bergerak
+        dalam bidang otomasi industri, PLC, electrical control,
+        panel kontrol dan berbagai kebutuhan teknik.
+      </p>
+
+      <p>
+        Kami mengerjakan project berdasarkan kebutuhan,
+        mulai dari perancangan, pembuatan, programming,
+        wiring, testing hingga troubleshooting.
+      </p>
+
+      <p>
+        Fokus kami adalah menghasilkan sistem yang rapi,
+        berfungsi dengan baik dan sesuai kebutuhan project.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="services" class="services">
+
+  <div class="container">
+
+    <div class="label">
+      LAYANAN KAMI
+    </div>
+
+    <h2>
+      Apa yang Kami Kerjakan
+    </h2>
+
+    <p class="services-intro">
+      Berbagai layanan otomasi dan teknik untuk membantu
+      kebutuhan project industri maupun custom project.
+    </p>
+
+
+    <div class="service-grid">
+
+      <div class="service">
+
+        <span class="number">01</span>
+
+        <h3>PLC & Automation</h3>
+
+        <p>
+          Programming dan pengembangan sistem kontrol
+          berbasis PLC.
+        </p>
+
+        <ul>
+          <li>PLC Programming</li>
+          <li>Troubleshooting</li>
+          <li>Sequence Control</li>
+          <li>Automation System</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service">
+
+        <span class="number">02</span>
+
+        <h3>Panel Control</h3>
+
+        <p>
+          Pembuatan dan perakitan panel kontrol sesuai
+          kebutuhan sistem.
+        </p>
+
+        <ul>
+          <li>Control Panel</li>
+          <li>Panel Assembly</li>
+          <li>Wiring</li>
+          <li>Component Installation</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service">
+
+        <span class="number">03</span>
+
+        <h3>Electrical</h3>
+
+        <p>
+          Pengerjaan sistem electrical dan kontrol mesin.
+        </p>
+
+        <ul>
+          <li>Electrical Control</li>
+          <li>Sensor</li>
+          <li>Inverter</li>
+          <li>Machine Control</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service">
+
+        <span class="number">04</span>
+
+        <h3>Custom Engineering</h3>
+
+        <p>
+          Pengerjaan project custom sesuai kebutuhan
+          pelanggan.
+        </p>
+
+        <ul>
+          <li>Custom Project</li>
+          <li>Machine Modification</li>
+          <li>Fabrication</li>
+          <li>Testing</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="projects" class="projects">
+
+  <div class="container">
+
+    <div class="label">
+      PORTFOLIO
+    </div>
+
+    <h2>
+      Project & Hasil Pekerjaan
+    </h2>
+
+    <div class="project-grid">
+
+
+      <div class="project">
+
+        <div class="project-photo">
+          FOTO PROJECT 01
+        </div>
+
+        <div class="project-info">
+
+          <small>PLC • CONTROL</small>
+
+          <h3>
+            Panel Control
+          </h3>
+
+          <p>
+            Dokumentasi hasil pembuatan panel control
+            dan sistem otomasi.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="project">
+
+        <div class="project-photo">
+          FOTO PROJECT 02
+        </div>
+
+        <div class="project-info">
+
+          <small>ELECTRICAL</small>
+
+          <h3>
+            Electrical & Wiring
+          </h3>
+
+          <p>
+            Dokumentasi pengerjaan wiring dan instalasi
+            electrical.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="project">
+
+        <div class="project-photo">
+          FOTO PROJECT 03
+        </div>
+
+        <div class="project-info">
+
+          <small>CUSTOM ENGINEERING</small>
+
+          <h3>
+            Custom Project
+          </h3>
+
+          <p>
+            Dokumentasi produk atau mesin hasil
+            pengerjaan workshop.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="gallery" class="gallery">
+
+  <div class="container">
+
+    <div class="label">
+      GALERI
+    </div>
+
+    <h2>
+      Dokumentasi Workshop
+    </h2>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-box">
+        FOTO WORKSHOP
+      </div>
+
+      <div class="gallery-box">
+        PLC
+      </div>
+
+      <div class="gallery-box">
+        PANEL CONTROL
+      </div>
+
+      <div class="gallery-box">
+        WIRING
+      </div>
+
+      <div class="gallery-box">
+        HASIL PRODUK
+      </div>
+
+      <div class="gallery-box">
+        DOKUMENTASI PROJECT
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="process">
+
+  <div class="container">
+
+    <div class="label">
+      PROSES KERJA
+    </div>
+
+    <h2>
+      Dari kebutuhan sampai siap digunakan.
+    </h2>
+
+    <div class="process-grid">
+
+      <div class="process-item">
+
+        <b>01</b>
+
+        <h3>
+          Konsultasi
+        </h3>
+
+        <p>
+          Membahas kebutuhan dan masalah project.
+        </p>
+
+      </div>
+
+
+      <div class="process-item">
+
+        <b>02</b>
+
+        <h3>
+          Perancangan
+        </h3>
+
+        <p>
+          Menentukan konsep dan kebutuhan sistem.
+        </p>
+
+      </div>
+
+
+      <div class="process-item">
+
+        <b>03</b>
+
+        <h3>
+          Pengerjaan
+        </h3>
+
+        <p>
+          Programming, wiring, assembly dan fabrication.
+        </p>
+
+      </div>
+
+
+      <div class="process-item">
+
+        <b>04</b>
+
+        <h3>
+          Testing
+        </h3>
+
+        <p>
+          Pengujian sistem dan troubleshooting.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+  <div class="container">
+
+    <div class="label">
+      HUBUNGI KAMI
+    </div>
+
+    <h2>
+      Punya Project atau Kebutuhan Otomasi?
+    </h2>
+
+    <p>
+      Hubungi R&R Automations Teknik Mandiri untuk
+      membicarakan kebutuhan project kamu.
+    </p>
+
+    <!+628381539870 -->
+
+    <a
+      class="button"
+      href="https://wa.me/6281234567890"
+      target="_blank">
+
+      Chat WhatsApp
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  © 2026 R&R Automations Teknik Mandiri
+
+</footer>
+
+</body>
+</html>
